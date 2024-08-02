@@ -13,3 +13,4 @@ module.exports = {
   }
 };
 
+// this is the hathat.config.js file
