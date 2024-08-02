@@ -1,13 +1,15 @@
-require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
 
-/** @type import('hardhat/config').HardhatUserConfig */
+const { INFURA_PROJECT_ID, PRIVATE_KEY } = process.env;
+
 module.exports = {
-  solidity: "0.8.17",
+  solidity: "0.8.9",
   networks: {
-    goerli: {
-      url: process.env.GOERLI_URL,
-      accounts: [process.env.PRIVATE_KEY]
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/${INFURA_PROJECT_ID}`,
+      accounts: [`0x${PRIVATE_KEY}`]
     }
   }
 };
+
